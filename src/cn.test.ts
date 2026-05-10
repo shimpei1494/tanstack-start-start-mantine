@@ -1,8 +1,8 @@
-import { cn } from "@lightsound/cn/tw-merge";
 import { describe, expect, it } from "vite-plus/test";
 
-describe("cn", () => {
-  it("後勝ちで Tailwind の競合クラスを解決する", () => {
-    expect(cn("text-red-500", "text-blue-500")).toBe("text-blue-500");
+describe("Mantine", () => {
+  it("@mantine/core パッケージが読み込める", async () => {
+    const { MantineProvider } = await import("@mantine/core");
+    expect(MantineProvider).toBeDefined();
   });
 });
