@@ -1,5 +1,7 @@
 # TanStack Start Starter
 
+> このテンプレートは [lightsound/tanstack-start-start](https://github.com/lightsound/tanstack-start-start) をベースに、Tailwind CSS を [Mantine](https://mantine.dev/) に置き換えたものです。
+
 A minimal application template built with [TanStack Start](https://tanstack.com/start) and [TanStack Router](https://tanstack.com/router), using [Vite+](https://viteplus.dev/) as the unified CLI for development, builds, formatting, linting, and tests.
 
 ## What you get
