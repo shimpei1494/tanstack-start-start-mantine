@@ -1,52 +1,51 @@
-# TanStack Start Starter
+# TanStack Start スターターテンプレート
 
-> このテンプレートは [lightsound/tanstack-start-start](https://github.com/lightsound/tanstack-start-start) をベースに、Tailwind CSS を [Mantine](https://mantine.dev/) に置き換えたものです。
+> [lightsound/tanstack-start-start](https://github.com/lightsound/tanstack-start-start) をベースに、Tailwind CSS を [Mantine](https://mantine.dev/) に置き換えた自分用テンプレートです。
 
-A minimal application template built with [TanStack Start](https://tanstack.com/start) and [TanStack Router](https://tanstack.com/router), using [Vite+](https://viteplus.dev/) as the unified CLI for development, builds, formatting, linting, and tests.
+[TanStack Start](https://tanstack.com/start) と [TanStack Router](https://tanstack.com/router) を使った最小構成のアプリケーションテンプレート。開発・ビルド・フォーマット・リント・テストは [Vite+](https://viteplus.dev/) で統一管理。
 
-## What you get
+## 含まれるもの
 
-- **TanStack Start** with file-based routing under `src/routes/`
-- **React 19** and **TypeScript**
-- **Tailwind CSS 4** with the Vite plugin
-- [**`@lightsound/cn`**](https://github.com/lightsound/cn) for class name merging (`tailwind-merge` under the hood)
-- **Vite+**-managed tooling: Oxlint, Oxfmt, Vitest-style testing via `vite-plus/test` (see [AGENTS.md](AGENTS.md) for workflow and pitfalls)
+- **TanStack Start** — `src/routes/` 配下のファイルベースルーティング
+- **React 19** + **TypeScript**
+- **Mantine** — UIコンポーネントライブラリ
+- **Vite+** 管理ツール：Oxlint、Oxfmt、`vite-plus/test` によるテスト（ワークフローや注意点は [AGENTS.md](AGENTS.md) を参照）
 
-## Requirements
+## 必要な環境
 
-Install [Vite+](https://viteplus.dev/guide/) so the `vp` command is available on your `PATH`.
+[Vite+](https://viteplus.dev/guide/) をインストールして `vp` コマンドを PATH に追加してください。
 
-This repo pins **`pnpm@10.32.1`** as the package manager; Vite+ (`vp install`, etc.) is the supported way to manage dependencies—avoid calling `pnpm` / `npm` / `yarn` directly for installs unless you know you need an exception.
+パッケージマネージャーは **`pnpm@10.32.1`** を使用。依存関係の管理は `vp install` などの Vite+ コマンドで行い、`pnpm` / `npm` / `yarn` を直接呼ぶのは避けてください。
 
-## Getting started
+## セットアップ
 
-```bash
-git clone https://github.com/lightsound/tanstack-start-start.git
-cd tanstack-start-start
+\`\`\`bash
+git clone <このリポジトリのURL>
+cd tanstack-start-start-mantine
 vp install
 vp dev
-```
+\`\`\`
 
-Open the URL printed in the terminal (Vite’s default is usually `http://localhost:5173`).
+ターミナルに表示された URL（デフォルトは `http://localhost:5173`）をブラウザで開く。
 
-## Everyday commands
+## よく使うコマンド
 
-| Command      | Purpose                                                          |
-| ------------ | ---------------------------------------------------------------- |
-| `vp dev`     | Start the dev server with HMR                                    |
-| `vp build`   | Production build                                                 |
-| `vp preview` | Preview the production build locally                             |
-| `vp check`   | Format, lint, and type-check (fix with `--fix` where applicable) |
-| `vp test`    | Run tests                                                        |
-| `vp help`    | List built-in commands and options                               |
+| コマンド     | 内容                                                   |
+| ------------ | ------------------------------------------------------ |
+| `vp dev`     | HMR付きの開発サーバー起動                              |
+| `vp build`   | プロダクションビルド                                   |
+| `vp preview` | プロダクションビルドのローカルプレビュー               |
+| `vp check`   | フォーマット・リント・型チェック（`--fix` で自動修正） |
+| `vp test`    | テスト実行                                             |
+| `vp help`    | コマンド一覧の表示                                     |
 
-`package.json` scripts (`dev`, `build`, `check`, `test`, …) delegate to these same `vp` entry points.
+`package.json` のスクリプト（`dev`、`build`、`check`、`test` など）は同じ `vp` コマンドに委譲しています。
 
-Optional maintenance tools (not part of `vp check`):
+任意のメンテナンスツール（`vp check` には含まれない）：
 
-- `vp run knip` — unused files, dependencies, exports (`knip.config.ts`)
-- `vp run doctor` — React health checks (`react-doctor`, `--no-lint` in the script)
+- `vp run knip` — 未使用ファイル・依存関係・エクスポートの検出（`knip.config.ts`）
+- `vp run doctor` — React ヘルスチェック（`react-doctor`、`--no-lint` 付き）
 
-## License
+## ライセンス
 
-[MIT](LICENSE.md).
+[MIT](LICENSE.md)
