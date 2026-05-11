@@ -1,24 +1,30 @@
-# Using Vite+ (`vp`)
+# Vite+ (`vp`) の使い方
 
-**Vite+** is one CLI for dev, build, tests, lint, format, and package management—it wraps Vite and related bundled tooling. `vp dev` and `vp build` invoke Vite. Explore with `vp help`, `vp <command> --help`, and `vp --version`.
+**Vite+** は開発・ビルド・テスト・Lint・フォーマット・パッケージ管理をひとつにまとめた CLI です。Vite 関連ツールをラップしています。`vp dev` と `vp build` は Vite を呼び出します。`vp help`、`vp <command> --help`、`vp --version` で詳細を確認できます。
 
-**Common commands:** `vp install`, `vp dev`, `vp check`, `vp lint`, `vp test`, `vp build`, `vp run <script>`, `vp add` / `vp remove` / `vp update`.
+**よく使うコマンド:** `vp install`, `vp dev`, `vp check`, `vp lint`, `vp test`, `vp build`, `vp run <script>`, `vp add` / `vp remove` / `vp update`
 
-**Workflow:** After pulling, run `vp install` when dependencies or lockfiles may have changed. Before calling work done, run `vp check` and `vp test`.
+**ワークフロー:** pull 後は依存関係やロックファイルが変わっている可能性があるため `vp install` を実行してください。作業完了前に必ず `vp check` と `vp test` を実行してください。
 
-## Common Pitfalls
+## よくあるミス
 
-- **Using the package manager directly:** Do not use pnpm, npm, or Yarn directly. Vite+ can handle all package manager operations.
-- **Always use Vite commands to run tools:** Don't attempt to run `vp vitest` or `vp oxlint`. They do not exist. Use `vp test` and `vp lint` instead.
-- **Running scripts:** Vite+ commands take precedence over `package.json` scripts. If there is a `test` script defined in `scripts` that conflicts with the built-in `vp test` command, run it using `vp run test`.
-- **Do not install Vitest, Oxlint, Oxfmt, or tsdown directly:** Vite+ wraps these tools. They must not be installed directly. You cannot upgrade these tools by installing their latest versions. Always use Vite+ commands.
-- **Use Vite+ wrappers for one-off binaries:** Use `vp dlx` instead of package-manager-specific `dlx`/`npx` commands.
-- **Import JavaScript modules from `vite-plus`:** Instead of importing from `vite` or `vitest`, all modules should be imported from the project's `vite-plus` dependency. For example, `import { defineConfig } from 'vite-plus';` or `import { expect, test, vi } from 'vite-plus/test';`. You must not install `vitest` to import test utilities.
-- **Type-Aware Linting:** There is no need to install `oxlint-tsgolint`, `vp lint --type-aware` works out of the box.
+- **パッケージマネージャーを直接使わない:** pnpm、npm、Yarn は直接使用しないでください。パッケージ管理はすべて Vite+ で行えます。
+- **Vite コマンドでツールを実行する:** `vp vitest` や `vp oxlint` は存在しません。テストは `vp test`、Lint は `vp lint` を使用してください。
+- **スクリプトの実行:** `package.json` の `scripts` に組み込みコマンドと同名のスクリプト（例: `test`）がある場合は `vp run test` で実行してください。
+- **Vitest・Oxlint・Oxfmt・tsdown を直接インストールしない:** これらは Vite+ にラップされています。直接インストールしたり、個別にアップグレードしたりしないでください。
+- **単発バイナリは Vite+ ラッパーを使う:** `npx` や各パッケージマネージャーの `dlx` の代わりに `vp dlx` を使用してください。
+- **JavaScript モジュールは `vite-plus` からインポートする:** `vite` や `vitest` からは直接インポートせず、プロジェクトの `vite-plus` 依存からインポートしてください。例: `import { defineConfig } from 'vite-plus';` や `import { expect, test, vi } from 'vite-plus/test';`。テストユーティリティのために `vitest` をインストールしてはいけません。
+- **型を考慮した Lint:** `oxlint-tsgolint` をインストールする必要はありません。`vp lint --type-aware` がそのまま使えます。
 
-## Supplementary project tools
+## 補助ツール
 
-Not part of `vp check`. Use `vp run` so installs stay routed through Vite+.
+`vp check` には含まれません。インストールは Vite+ 経由で行うため `vp run` を使ってください。
 
-- **Knip** (`vp run knip`) — unused files, dependencies, and exports. Use when trimming deps or refactoring entry points (`knip.config.ts` configures the project).
-- **react-doctor** (`vp run doctor`) — React-focused health checks. The script uses `--no-lint`; keep ordinary linting on `vp lint`.
+- **Knip** (`vp run knip`) — 未使用のファイル・依存関係・エクスポートを検出します。依存関係の整理やエントリーポイントのリファクタリング時に使用してください（設定は `knip.config.ts`）。
+- **react-doctor** (`vp run doctor`) — React に特化したヘルスチェックを実行します。スクリプトは `--no-lint` で動作するため、通常の Lint は `vp lint` で行ってください。
+
+## Mantine UI
+このプロジェクトは Mantine v9 を使用しています。
+コンポーネントや API について不明な場合は以下を参照してください:
+- ドキュメント: https://mantine.dev/llms.txt (コンパクト版)
+- フル版: https://mantine.dev/llms-full.txt
