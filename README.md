@@ -23,8 +23,11 @@
 git clone <このリポジトリのURL>
 cd tanstack-start-start-mantine
 vp install
+vp config
 vp dev
 \`\`\`
+
+`vp config` を実行すると git の `core.hookspath` が `.vite-hooks/_` に設定され、コミット前に `vp staged`（ステージ済みファイルのチェック）が自動実行されるようになります。
 
 ターミナルに表示された URL（デフォルトは `http://localhost:5173`）をブラウザで開く。
 
