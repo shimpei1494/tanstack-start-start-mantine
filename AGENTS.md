@@ -4,7 +4,7 @@
 
 **よく使うコマンド:** `vp install`, `vp dev`, `vp check`, `vp lint`, `vp test`, `vp build`, `vp run <script>`, `vp add` / `vp remove` / `vp update`
 
-**ワークフロー:** pull 後は依存関係やロックファイルが変わっている可能性があるため `vp install` を実行してください。作業完了前に必ず `vp check` と `vp test` を実行してください。
+**ワークフロー:** pull 後は依存関係やロックファイルが変わっている可能性があるため `vp install` を実行してください。コードの修正が完了したら必ず `vp check` を実行し、エラーが出た場合はすべて修正してから作業を完了としてください。
 
 ## よくあるミス
 
@@ -24,7 +24,9 @@
 - **react-doctor** (`vp run doctor`) — React に特化したヘルスチェックを実行します。スクリプトは `--no-lint` で動作するため、通常の Lint は `vp lint` で行ってください。
 
 ## Mantine UI
+
 このプロジェクトは Mantine v9 を使用しています。
 コンポーネントや API について不明な場合は以下を参照してください:
+
 - ドキュメント: https://mantine.dev/llms.txt (コンパクト版)
 - フル版: https://mantine.dev/llms-full.txt
